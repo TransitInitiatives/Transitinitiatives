@@ -1,126 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transit Initiatives | Transport Planning & Advisory</title>
-  <meta name="description" content="Transit Initiatives is a transport planning and advisory firm providing feasibility studies, transit planning, freight and mobility solutions.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transit Initiatives</title>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GGEZK4QE9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5GGEZK4QE9');
-  </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
-    header { background: #0f1f3d; color: #fff; padding: 20px; text-align: center; }
-    section { padding: 60px 20px; }
-    .container { max-width: 1100px; margin: auto; }
-    h2 { text-align: center; margin-bottom: 30px; }
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GGEZK4QE9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5GGEZK4QE9');
+    </script>
 
-    .services { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
-    .service { background: #f5f6fa; padding: 20px; border-radius: 10px; text-align: center; }
+    <style>
+        :root {
+            --primary: #0b3c5d;
+            --secondary: #1d7fa3;
+            --accent: #f4b41a;
+            --light: #f7f9fb;
+            --dark: #222;
+        }
 
-    .contact-section { background: #f8f9fb; }
-    form { max-width: 500px; margin: auto; }
-    input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; }
-    button { width: 100%; padding: 12px; background: #1f4fd8; color: #fff; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
-    button:hover { background: #163bb2; }
+        * { box-sizing: border-box; }
 
-    .whatsapp-btn { display: inline-block; margin-top: 15px; padding: 12px 22px; background: #25d366; color: #fff; border-radius: 6px; text-decoration: none; font-weight: 600; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
 
-    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; font-size: 28px; padding: 14px 18px; border-radius: 50%; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        header {
+            background: linear-gradient(135deg, rgba(11,60,93,0.85), rgba(29,127,163,0.85)),
+            url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80')
+            center/cover no-repeat;
+            color: #fff;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
 
-    footer { background: #0f1f3d; color: #fff; text-align: center; padding: 20px; }
-  </style>
+        header h1 { font-size: 3rem; margin-bottom: 10px; }
+        header p { font-size: 1.2rem; max-width: 700px; margin: auto; }
+
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+        }
+
+        nav a {
+            margin: 0 18px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            left: 0;
+            bottom: -6px;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after { width: 100%; }
+
+        section { padding: 50px 20px; }
+        .container { max-width: 1100px; margin: auto; }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .about p {
+            max-width: 850px;
+            margin: 0 auto 15px;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+        }
+
+        .service-card h3 { color: var(--secondary); }
+
+        .contact-box {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: #fff;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover { transform: scale(1.05); }
+
+        footer {
+            background: #081f2d;
+            color: #cfd8dc;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.3rem; }
+        }
+    </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Transit Initiatives</h1>
-  <p>Planning Practical Mobility Solutions</p>
+    <h1>Transit Initiatives</h1>
+    <p>Shaping Sustainable Mobility through Thoughtful Transportation Planning</p>
 </header>
 
-<section class="container">
-  <h2>About Us</h2>
-  <p>Transit Initiatives is a transport planning and advisory firm focused on delivering data-driven, implementable mobility solutions. We work with public agencies and private stakeholders on transit planning, feasibility analysis, and freight and logistics studies.</p>
+<nav>
+    <div class="nav-container">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section id="about" class="about">
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Transit Initiatives is an independent transportation and mobility advisory firm working at the intersection of planning, policy, and on-ground implementation.</p>
+        <p>Our work is rooted in evidence-based analysis, contextual awareness, and feasibility-focused solutions.</p>
+        <p>We support better decision-making for safer, more efficient, and sustainable transport systems.</p>
+    </div>
 </section>
 
-<section class="container">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="service">Transit & Transport Planning</div>
-    <div class="service">Feasibility Studies</div>
-    <div class="service">Freight & Logistics Analysis</div>
-    <div class="service">Policy & Research Support</div>
-  </div>
+<section id="services">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Transportation & Urban Planning</h3>
+                <p>Integrated transport and traffic planning solutions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Urban Mobility Consulting</h3>
+                <p>Strategies for sustainable, inclusive mobility.</p>
+            </div>
+            <div class="service-card">
+                <h3>Traffic Management & Safety</h3>
+                <p>Data-driven safety and operations analysis.</p>
+            </div>
+            <div class="service-card">
+                <h3>Feasibility & Technical Studies</h3>
+                <p>Planning support and feasibility assessments.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="contact" class="contact-section">
-  <div class="container">
-    <h2>Contact Us</h2>
+<section id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
 
-    <form id="contact-form">
-      <input type="text" name="_gotcha" style="display:none">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="tel" name="phone" placeholder="Phone Number">
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-      <p id="form-status" style="display:none;"></p>
-    </form>
+        <div class="contact-box">
+            <p>
+                <strong>Transit Initiatives</strong><br>
+                12-39-6, Indira Colony, BC Road<br>
+                Visakhapatnam – 530026<br>
+                Phone: +91 63093 59141
+            </p>
+            <a href="tel:+916309359141" class="btn">Call</a>
+            &nbsp;
+            <a href="https://wa.me/916309359141" class="btn">WhatsApp</a>
+        </div>
 
-    <a href="https://wa.me/916309359141" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
+        <div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+            <div style="background:#fff;padding:25px;border-radius:16px;">
+                <h3>Send Us a Message</h3>
 
-    <p style="text-align:center;margin-top:20px;">
-      <strong>Phone:</strong> +91 63093 59141<br>
-      <strong>Address:</strong><br>
-      Building No. 12-39-6, Indira Colony, BC Road,<br>
-      Near Laxmi Pan Shop, Gajuwaka,<br>
-      Visakhapatnam, Andhra Pradesh – 530026
-    </p>
+                <form action="https://formspree.io/f/xlgrbbvl" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:12px;margin-bottom:12px;">
+                    <input type="email" name="email" placeholder="Your Email" required style="width:100%;padding:12px;margin-bottom:12px;">
+                    <input type="tel" name="phone" placeholder="Your Phone" style="width:100%;padding:12px;margin-bottom:12px;">
+                    <textarea name="message" placeholder="Your Message" rows="4" required style="width:100%;padding:12px;margin-bottom:15px;"></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
 
-    <iframe src="https://www.google.com/maps?q=Gajuwaka,Visakhapatnam&output=embed" width="100%" height="300" style="border:0;border-radius:10px;" loading="lazy"></iframe>
-  </div>
+            <div style="border-radius:16px;overflow:hidden;">
+                <iframe src="https://www.google.com/maps?q=Gajuwaka,Visakhapatnam&output=embed"
+                        width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
 </section>
-
-<a href="https://wa.me/916309359141" class="whatsapp-float" target="_blank">💬</a>
 
 <footer>
-  <p>© 2025 Transit Initiatives. This website uses Google Analytics to improve user experience.</p>
+    <p>© 2025 Transit Initiatives Private Limited. All Rights Reserved.</p>
 </footer>
-
-<script>
-const form = document.getElementById("contact-form");
-const status = document.getElementById("form-status");
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const data = new FormData(form);
-
-  const response = await fetch("https://formspree.io/f/xlgrbbvl", {
-    method: "POST",
-    body: data,
-    headers: { "Accept": "application/json" }
-  });
-
-  if (response.ok) {
-    form.reset();
-    status.style.display = "block";
-    status.style.color = "green";
-    status.innerText = "Thank you! We’ll get back to you shortly.";
-    if (window.gtag) gtag('event', 'form_submit', { event_category: 'Contact' });
-  } else {
-    status.style.display = "block";
-    status.style.color = "red";
-    status.innerText = "Submission failed. Please use WhatsApp.";
-  }
-});
-</script>
 
 </body>
 </html>
