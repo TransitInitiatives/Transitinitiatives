@@ -1,247 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transit Initiatives</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Initiatives</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GGEZK4QE9"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5GGEZK4QE9');
-    </script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5GGEZK4QE9"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5GGEZK4QE9');
+</script>
 
-    <style>
-        :root {
-            --primary: #0b3c5d;
-            --secondary: #1d7fa3;
-            --accent: #f4b41a;
-            --light: #f7f9fb;
-            --dark: #222;
-        }
-        * { box-sizing: border-box; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            background: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #fff;
-            padding: 60px 20px 40px;
-            text-align: center;
-        }
-        header h1 { font-size: 3rem; margin-bottom: 10px; }
-        header p { font-size: 1.2rem; max-width: 700px; margin: auto; }
-        nav {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav .nav-container {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            padding: 15px 20px;
-        }
-        nav a {
-            margin: 0 18px;
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 600;
-            position: relative;
-        }
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            background: var(--accent);
-            left: 0;
-            bottom: -6px;
-            transition: width 0.3s;
-        }
-        nav a:hover::after { width: 100%; }
-        section { padding: 50px 20px; }
-        .container { max-width: 1100px; margin: auto; }
-        h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: var(--primary);
-        }
-        .about p {
-            max-width: 850px;
-            margin: 0 auto 15px;
-            text-align: center;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .service-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-        .contact-box {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            color: #fff;
-            padding: 50px;
-            border-radius: 20px;
-            text-align: center;
-        }
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: #000;
-            padding: 14px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        footer {
-            background: #081f2d;
-            color: #cfd8dc;
-            text-align: center;
-            padding: 25px 15px;
-        }
-    </style>
+<style>
+:root {
+    --primary:#0b3c5d;
+    --secondary:#1d7fa3;
+    --accent:#f4b41a;
+    --light:#f7f9fb;
+    --dark:#222;
+}
+* { box-sizing:border-box; }
+
+body {
+    font-family:'Poppins',sans-serif;
+    margin:0;
+    background:var(--light);
+    color:var(--dark);
+    line-height:1.6;
+}
+
+header {
+    color:#fff;
+    padding:60px 20px 40px;
+    text-align:center;
+}
+
+header h1 { font-size:3rem; margin-bottom:10px; }
+header p { font-size:1.2rem; max-width:700px; margin:auto; }
+
+nav {
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+.nav-container {
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    padding:15px 20px;
+}
+nav a {
+    margin:0 18px;
+    text-decoration:none;
+    color:var(--primary);
+    font-weight:600;
+    position:relative;
+}
+nav a::after {
+    content:'';
+    position:absolute;
+    width:0;
+    height:3px;
+    background:var(--accent);
+    left:0;
+    bottom:-6px;
+    transition:width .3s;
+}
+nav a:hover::after { width:100%; }
+
+section { padding:50px 20px; }
+.container { max-width:1100px; margin:auto; }
+
+h2 {
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:25px;
+    color:var(--primary);
+}
+
+.about p {
+    max-width:850px;
+    margin:0 auto 15px;
+    text-align:center;
+}
+
+/* SERVICES */
+.services-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.service-card {
+    background:#fff;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* CONTACT */
+.contact-box {
+    background:linear-gradient(135deg,var(--secondary),var(--primary));
+    color:#fff;
+    padding:50px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.btn {
+    display:inline-block;
+    background:var(--accent);
+    color:#000;
+    padding:14px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    border:none;
+    cursor:pointer;
+}
+
+/* FORM */
+form {
+    max-width:600px;
+    margin:0 auto;
+}
+form input, form textarea {
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-family:'Poppins',sans-serif;
+}
+textarea { resize:vertical; min-height:120px; }
+
+footer {
+    background:#081f2d;
+    color:#cfd8dc;
+    text-align:center;
+    padding:25px 15px;
+}
+</style>
 </head>
 
 <body>
 
-<header style="background: linear-gradient(135deg, rgba(11,60,93,0.85), rgba(29,127,163,0.85)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;">
-    <h1>Transit Initiatives</h1>
-    <p>Shaping Sustainable Mobility through Thoughtful Transportation Planning</p>
+<header style="background:linear-gradient(135deg,rgba(11,60,93,.85),rgba(29,127,163,.85)),url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;">
+<h1>Transit Initiatives</h1>
+<p>Shaping Sustainable Mobility through Thoughtful Transportation Planning</p>
 </header>
 
 <nav>
-    <div class="nav-container">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </div>
+<div class="nav-container">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <section id="about" class="about">
-    <div class="container">
-        <h2>About Us</h2>
-        <p>
-            Transit Initiatives is an independent transportation and mobility advisory firm working
-            at the intersection of planning, policy, and on-ground implementation. We focus on
-            understanding how people and goods move, and translating that understanding into
-            practical, scalable solutions for cities and regions.
-        </p>
-        <p>
-            Our work is rooted in evidence-based analysis, contextual awareness, and a strong
-            emphasis on feasibility. Rather than one-size-fits-all approaches, we develop
-            solutions that respond to local travel patterns, institutional needs, and long-term
-            development goals.
-        </p>
-        <p>
-            Through clear technical insight and collaborative engagement, Transit Initiatives
-            supports better decision-making for safer, more efficient, and more sustainable
-            transport systems.
-        </p>
-    </div>
+<div class="container">
+<h2>About Us</h2>
+<p>Transit Initiatives is an independent transportation and mobility advisory firm working at the intersection of planning, policy, and on-ground implementation.</p>
+<p>Our work is rooted in evidence-based analysis, contextual awareness, and feasibility-driven solutions tailored to local conditions.</p>
+<p>We support better decision-making for safer, more efficient, and sustainable transport systems.</p>
+</div>
 </section>
+
 <section id="services">
-    <div class="container">
-        <h2>Our Services</h2>
-        <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Transportation Planning" style="width:100%;border-radius:12px;margin-bottom:15px;">
-                <h3>Transportation and Urban Planning</h3>
-                <p>Integrated transport and traffic planning solutions tailored to urban and regional contexts.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Urban Mobility" style="width:100%;border-radius:12px;margin-bottom:15px;">
-                <h3>Urban Mobility Consulting</h3>
-                <p>Mobility strategies supporting sustainable development, accessibility, and livability.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Traffic Management" style="width:100%;border-radius:12px;margin-bottom:15px;">
-                <h3>Traffic Management & Safety</h3>
-                <p>Data-driven traffic management, safety analysis, and operational improvement studies.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80" alt="Feasibility Studies" style="width:100%;border-radius:12px;margin-bottom:15px;">
-                <h3>Feasibility & Technical Studies</h3>
-                <p>Technical assessments, feasibility analysis, and planning support for infrastructure projects.</p>
-            </div>
-    </div>
+<div class="container">
+<h2>Our Services</h2>
+
+<div class="services-grid">
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="">
+<h3>Transportation and Urban Planning</h3>
+<p>Integrated transport and traffic planning solutions.</p>
+</div>
+
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="">
+<h3>Urban Mobility Consulting</h3>
+<p>Sustainable mobility strategies improving accessibility.</p>
+</div>
+
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="">
+<h3>Traffic Management & Safety</h3>
+<p>Data-driven traffic and road safety analysis.</p>
+</div>
+
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80" alt="">
+<h3>Feasibility & Technical Studies</h3>
+<p>Technical assessments and infrastructure feasibility studies.</p>
+</div>
+</div>
+
+</div>
 </section>
 
 <section id="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
+<div class="container">
+<h2>Contact Us</h2>
 
-        <div class="contact-box">
-            <p>
-                <strong>Transit Initiatives</strong><br>
-                Flat No.: 12-39-6<br>
-                Indira Colony, Gajuwaka<br>
-                Visakhapatnam – 530026<br>
-                Phone: +91 63093 59141
-            </p>
-            <a href="tel:+916309359141" class="btn">Call Us</a>
-            &nbsp;
-            <a href="https://wa.me/916309359141" class="btn">WhatsApp</a>
-        </div>
+<div class="contact-box">
+<p>
+<strong>Transit Initiatives</strong><br>
+Flat No.: 12-39-6<br>
+Indira Colony, Gajuwaka<br>
+Visakhapatnam – 530026<br>
+Phone: +91 63093 59141
+</p>
+<a href="tel:+916309359141" class="btn">Call Us</a>
+&nbsp;
+<a href="https://wa.me/916309359141" class="btn">WhatsApp</a>
+</div>
 
-        <div style="margin-top:40px;">
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <input type="tel" name="phone" placeholder="Your Phone">
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Submit</button>
-                <p id="form-status"></p>
-            </form>
-        </div>
-    </div>
+<div style="margin-top:40px;">
+<form id="contact-form" action="https://formspree.io/f/xlgrbbvl" method="POST">
+<input type="text" name="name" placeholder="Your Name" required aria-label="Name">
+<input type="email" name="email" placeholder="Your Email" required aria-label="Email">
+<input type="tel" name="phone" placeholder="Your Phone" aria-label="Phone">
+<textarea name="message" placeholder="Your Message" required aria-label="Message"></textarea>
+<button type="submit" class="btn">Submit</button>
+<p id="form-status"></p>
+</form>
+</div>
+
+</div>
 </section>
 
 <footer>
-    <p>&copy; 2025 Transit Initiatives Private Ltd. All Rights Reserved.</p>
+<p>&copy; 2025 Transit Initiatives Private Ltd. All Rights Reserved.</p>
 </footer>
 
 <script>
 const form = document.getElementById("contact-form");
 const status = document.getElementById("form-status");
 
-form.addEventListener("submit", async function(e) {
-    e.preventDefault();
-    const data = new FormData(form);
-
-    const response = await fetch("https://formspree.io/f/xlgrbbvl", {
-        method: "POST",
-        body: data,
-        headers: { "Accept": "application/json" }
-    });
-
-    if (response.ok) {
-        form.reset();
-        status.innerText = "Thank you! We’ll get back to you shortly.";
-        status.style.color = "green";
-        if (window.gtag) gtag('event', 'form_submit');
-    } else {
-        status.innerText = "Submission failed. Please use WhatsApp.";
-        status.style.color = "red";
-    }
+if (form) {
+form.addEventListener("submit", async e => {
+e.preventDefault();
+try {
+const response = await fetch(form.action, {
+method:"POST",
+body:new FormData(form),
+headers:{ "Accept":"application/json" }
 });
+if (response.ok) {
+form.reset();
+status.textContent="Thank you! We’ll get back to you shortly.";
+status.style.color="green";
+if (window.gtag) gtag('event','form_submit');
+} else {
+throw new Error();
+}
+} catch {
+status.textContent="Submission failed. Please use WhatsApp.";
+status.style.color="red";
+}
+});
+}
 </script>
 
 </body>
