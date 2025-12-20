@@ -34,18 +34,19 @@ body {
     line-height:1.6;
 }
 
+/* HEADER */
 header {
     color:#fff;
     padding:60px 20px 40px;
     text-align:center;
 }
-
 header h1 { font-size:3rem; margin-bottom:10px; }
 header p { font-size:1.2rem; max-width:700px; margin:auto; }
 
+/* NAV */
 nav {
     background:#fff;
-    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
     position:sticky;
     top:0;
     z-index:1000;
@@ -72,45 +73,80 @@ nav a::after {
     background:var(--accent);
     left:0;
     bottom:-6px;
-    transition:width .3s;
+    transition:.3s;
 }
 nav a:hover::after { width:100%; }
 
+/* SECTIONS */
 section { padding:50px 20px; }
 .container { max-width:1100px; margin:auto; }
 
 h2 {
     text-align:center;
     font-size:2rem;
-    margin-bottom:25px;
+    margin-bottom:30px;
     color:var(--primary);
 }
 
+/* ABOUT */
 .about p {
     max-width:850px;
     margin:0 auto 15px;
     text-align:center;
 }
 
-/* SERVICES */
+/* SERVICES – RESPONSIVE FIX */
 .services-grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns:1fr;
+    }
 }
 
 .service-card {
     background:#fff;
-    padding:30px;
+    padding:22px;
     border-radius:16px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    text-align:left;
+}
+
+.service-card img {
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+.service-card h3 {
+    margin:10px 0 8px;
+    font-size:1.1rem;
+    color:var(--primary);
+}
+
+.service-card p {
+    font-size:.95rem;
 }
 
 /* CONTACT */
 .contact-box {
     background:linear-gradient(135deg,var(--secondary),var(--primary));
     color:#fff;
-    padding:50px;
+    padding:40px;
     border-radius:20px;
     text-align:center;
 }
@@ -140,8 +176,9 @@ form input, form textarea {
     border:1px solid #ccc;
     font-family:'Poppins',sans-serif;
 }
-textarea { resize:vertical; min-height:120px; }
+textarea { min-height:120px; }
 
+/* FOOTER */
 footer {
     background:#081f2d;
     color:#cfd8dc;
@@ -169,9 +206,8 @@ footer {
 <section id="about" class="about">
 <div class="container">
 <h2>About Us</h2>
-<p>Transit Initiatives is an independent transportation and mobility advisory firm working at the intersection of planning, policy, and on-ground implementation.</p>
-<p>Our work is rooted in evidence-based analysis, contextual awareness, and feasibility-driven solutions tailored to local conditions.</p>
-<p>We support better decision-making for safer, more efficient, and sustainable transport systems.</p>
+<p>Transit Initiatives is an independent transportation and mobility advisory firm working at the intersection of planning, policy, and implementation.</p>
+<p>We deliver evidence-based, context-sensitive transport solutions tailored to local needs.</p>
 </div>
 </section>
 
@@ -180,31 +216,32 @@ footer {
 <h2>Our Services</h2>
 
 <div class="services-grid">
+
 <div class="service-card">
 <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="">
-<h3>Transportation and Urban Planning</h3>
-<p>Integrated transport and traffic planning solutions.</p>
+<h3>Transportation & Urban Planning</h3>
+<p>Integrated transport and traffic planning solutions for urban and regional contexts.</p>
 </div>
 
 <div class="service-card">
 <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="">
 <h3>Urban Mobility Consulting</h3>
-<p>Sustainable mobility strategies improving accessibility.</p>
+<p>Strategies supporting sustainable mobility, accessibility, and livability.</p>
 </div>
 
 <div class="service-card">
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="">
 <h3>Traffic Management & Safety</h3>
-<p>Data-driven traffic and road safety analysis.</p>
+<p>Data-driven traffic operations, safety audits, and improvement studies.</p>
 </div>
 
 <div class="service-card">
 <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80" alt="">
 <h3>Feasibility & Technical Studies</h3>
-<p>Technical assessments and infrastructure feasibility studies.</p>
-</div>
+<p>Feasibility analysis and technical assessments for transport infrastructure.</p>
 </div>
 
+</div>
 </div>
 </section>
 
@@ -227,15 +264,14 @@ Phone: +91 63093 59141
 
 <div style="margin-top:40px;">
 <form id="contact-form" action="https://formspree.io/f/xlgrbbvl" method="POST">
-<input type="text" name="name" placeholder="Your Name" required aria-label="Name">
-<input type="email" name="email" placeholder="Your Email" required aria-label="Email">
-<input type="tel" name="phone" placeholder="Your Phone" aria-label="Phone">
-<textarea name="message" placeholder="Your Message" required aria-label="Message"></textarea>
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="tel" name="phone" placeholder="Your Phone">
+<textarea name="message" placeholder="Your Message" required></textarea>
 <button type="submit" class="btn">Submit</button>
 <p id="form-status"></p>
 </form>
 </div>
-
 </div>
 </section>
 
@@ -244,32 +280,28 @@ Phone: +91 63093 59141
 </footer>
 
 <script>
-const form = document.getElementById("contact-form");
-const status = document.getElementById("form-status");
+const form=document.getElementById("contact-form");
+const status=document.getElementById("form-status");
 
-if (form) {
-form.addEventListener("submit", async e => {
+form.addEventListener("submit",async e=>{
 e.preventDefault();
-try {
-const response = await fetch(form.action, {
+try{
+const res=await fetch(form.action,{
 method:"POST",
 body:new FormData(form),
-headers:{ "Accept":"application/json" }
+headers:{Accept:"application/json"}
 });
-if (response.ok) {
+if(res.ok){
 form.reset();
 status.textContent="Thank you! We’ll get back to you shortly.";
 status.style.color="green";
-if (window.gtag) gtag('event','form_submit');
-} else {
-throw new Error();
-}
-} catch {
+if(window.gtag) gtag('event','form_submit');
+}else throw new Error();
+}catch{
 status.textContent="Submission failed. Please use WhatsApp.";
 status.style.color="red";
 }
 });
-}
 </script>
 
 </body>
