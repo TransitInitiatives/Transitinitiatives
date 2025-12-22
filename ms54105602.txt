@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "transitinitiatives.com",
+  "Id": "426c683c-cf76-4211-a271-8b4bc28facc4"
+}
